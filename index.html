@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Douglas PNT - Portfólio</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Arial', sans-serif; scroll-behavior: smooth; }
+  body { color: #fff; background: #0e0e0e; overflow-x: hidden; }
+  
+  /* Fundo animado com partículas */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 20%, #0073e6, transparent 20%),
+                radial-gradient(circle at 80% 80%, #00bfff, transparent 20%),
+                radial-gradient(circle at 50% 50%, #00e676, transparent 20%);
+    background-size: 200% 200%;
+    animation: bgAnim 30s linear infinite;
+    z-index: -1;
+  }
+  @keyframes bgAnim {
+    0% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    50% { background-position: 100% 0%, 0% 100%, 50% 50%; }
+    100% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+  }
+
+  header { text-align: center; padding: 6rem 1rem; }
+  header h1 { font-size: 3rem; text-shadow: 0 0 15px rgba(0,115,230,0.7); }
+  header p { font-size: 1.3rem; margin-top: 0.5rem; color: #cceeff; }
+
+  section { max-width: 1000px; margin: 3rem auto; padding: 3rem; border-radius: 15px; background: rgba(0,0,0,0.6); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+  section h2 { text-align: center; margin-bottom: 2rem; font-size: 2.2rem; color: #00bfff; position: relative; }
+  section h2::after { content: ''; width: 80px; height: 4px; background: #00bfff; display: block; margin: 10px auto 0; border-radius: 2px; }
+
+  .about p { font-size: 1.1rem; line-height: 1.8; text-align: center; }
+  
+  /* Habilidades */
+  .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .skill { background: #0073e6; padding: 1rem 2rem; border-radius: 15px; font-weight: bold; transition: transform 0.3s, background 0.3s; cursor: default; }
+  .skill:hover { transform: scale(1.1); background: #00bfff; }
+
+  /* Portfólio */
+  .portfolio-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .portfolio-item { background: #111; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: transform 0.3s, box-shadow 0.3s; }
+  .portfolio-item:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.7); }
+  .portfolio-item a { display: block; padding: 1.5rem; color: #00e676; font-weight: bold; text-align: center; text-decoration: none; font-size: 1.1rem; }
+  .portfolio-item a:hover { color: #00bfff; }
+
+  /* Contato */
+  form { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: auto; }
+  .input-group { position: relative; }
+  .input-group i { position: absolute; top: 50%; left: 15px; transform: translateY(-50%); color: #00bfff; }
+  input, textarea { width: 100%; padding: 0.9rem 1rem 0.9rem 3rem; border-radius: 10px; border: none; outline: none; font-size: 1rem; }
+  button { padding: 1rem; background: #00bfff; color: #000; font-size: 1.2rem; border-radius: 10px; font-weight: bold; cursor: pointer; transition: transform 0.2s, background 0.3s; }
+  button:hover { transform: translateY(-3px); background: #0073e6; color: #fff; }
+  .success-message { display: none; text-align: center; padding: 1rem; margin-top: 1rem; border-radius: 10px; background: #d4edda; color: #155724; font-weight: bold; }
+
+  /* Redes sociais */
+  .social-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+  .social-icons a { font-size: 2.2rem; transition: transform 0.3s, color 0.3s; color: #00bfff; }
+  .social-icons a:hover { transform: scale(1.3); color: #00e676; }
+
+  footer { text-align: center; padding: 2rem 0; color: #ccc; font-size: 0.9rem; }
+
+  /* Scroll Animations */
+  [data-animate] { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+  [data-animate].active { opacity: 1; transform: translateY(0); }
+
+  @media(max-width:900px){ section { padding: 2rem; } header h1 { font-size:2.2rem; } header p{ font-size:1rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 data-animate>Douglas PNT</h1>
+  <p data-animate>Desenvolvedor Júnior | Tecnologia e Criatividade</p>
+</header>
+
+<section class="about" data-animate>
+  <h2>Sobre Mim</h2>
+  <p>Sou Douglas, apaixonado por tecnologia e desenvolvimento. Tenho experiência em análise, planejamento e automação de processos, e atualmente estou focado em desenvolvimento fullstack, aplicando soluções modernas e eficientes para projetos digitais.</p>
+</section>
+
+<section class="skills" data-animate>
+  <h2>Habilidades</h2>
+  <div class="skills-list">
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">MySQL</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Metodologias Ágeis</div>
+  </div>
+</section>
+
+<section class="portfolio" data-animate>
+  <h2>Portfólio</h2>
+  <div class="portfolio-list">
+    <div class="portfolio-item"><a href="#" target="_blank">Projeto 1</a></div>
+    <div class="portfolio-item"><a href="#" target="_blank">Projeto 2</a></div>
+    <div class="portfolio-item"><a href="#" target="_blank">Projeto 3</a></div>
+    <div class="portfolio-item"><a href="#" target="_blank">Projeto 4</a></div>
+  </div>
+</section>
+
+<section class="contact" data-animate>
+  <h2>Contato</h2>
+  <form id="contactForm">
+    <div class="input-group"><i class="fa fa-user"></i><input type="text" name="name" placeholder="Seu nome" required></div>
+    <div class="input-group"><i class="fa fa-envelope"></i><input type="email" name="_replyto" placeholder="Seu e-mail" required></div>
+    <div class="input-group"><i class="fa fa-comment"></i><textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea></div>
+    <button type="submit">Enviar</button>
+  </form>
+  <div class="success-message" id="successMessage">Obrigado! Sua mensagem foi enviada com sucesso.</div>
+
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/douglaspnt/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/douglaspnt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://wa.me/5511976976497" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/douuglaaass/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+</section>
+
+<footer data-animate>
+  &copy; 2025 Douglas PNT | Todos os direitos reservados
+</footer>
+
+<script>
+  // Formulário
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const url = "https://formspree.io/f/mnqlpweq"; // Substitua pelo seu endpoint Formspree
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+      } else { alert("Ocorreu um erro. Tente novamente."); }
+    } catch { alert("Ocorreu um erro. Verifique sua conexão."); }
+  });
+
+  // Scroll Animations
+  const elements = document.querySelectorAll('[data-animate]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('active'); } });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
